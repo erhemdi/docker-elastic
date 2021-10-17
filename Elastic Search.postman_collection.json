@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "b28a3ed1-8e62-499a-99ca-4b220194fecf",
+		"name": "Elastic Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Default Port",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9201",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9201"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Node Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9201/_cat/nodes?v",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9201",
+					"path": [
+						"_cat",
+						"nodes"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Index",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"settings\": {\n        \"index\": {\n            \"number_of_shards\": 3,\n            \"number_of_replicas\": 1\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9202/learn_es_2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9202",
+					"path": [
+						"learn_es_2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Detail Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/learn_es",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Cat Command",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/_cat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"_cat",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cat Indices",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/_cat/indices?v",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"_cat",
+						"indices"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cat Shards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/_cat/shards?v",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"_cat",
+						"shards"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Document",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Iris\",\n    \"last_name\": \"West\",\n    \"address\": {\n        \"city\": \"Jakarta\",\n        \"country\": \"Indonesia\"\n    },\n    \"hobby\": [\"gather information\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es_2/_doc/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_2",
+						"_doc",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Document",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/learn_es/_doc/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es",
+						"_doc",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Document",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Nora Barry\",\n    \"last_name\": \"Allen\",\n    \"address\": {\n        \"city\": \"DKI Jakarta\",\n        \"country\": \"Indonesia\"\n    },\n    \"hobby\": [\"watching\", \"sleeping\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es/_doc/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es",
+						"_doc",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Document",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/learn_es/_doc/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es",
+						"_doc",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partial Update Document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doc\": {\n        \"first_name\": \"John\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/belajar/_update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"belajar",
+						"_update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Specific Indexx",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/learn_es_2/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_2",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Query Match",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            // \"last_name\": \"allen\"\n            // \"address.city\": \"jakarta\"\n            \"hobby\": \"watching\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es_2/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_2",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Bool Query",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            // \"must_not\": {\n            //     \"match\": {\n            //         \"first_name\": \"barry\"\n            //     }\n            // }\n            \"must\": {\n                \"match\": {\n                    \"first_name\": \"iris\"\n                }\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es_2/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_2",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Bool Query Multiple Field",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": [],\n            \"must_not\": [],\n            \"should\": [\n                {\n                    \"match\": {\n                        \"first_name\": \"iris\"\n                    }\n                },\n                {\n                    \"match\": {\n                        \"last_name\": \"allen\"\n                    }\n                }\n            ]\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es_2/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_2",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Aggregation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": []\n        }\n    },\n    \"aggs\": {\n        \"hobbies\": {\n            \"terms\": {\n                \"field\": \"hobby.keyword\"\n            }\n        },\n        \"countries\": {\n            \"terms\": {\n                \"field\": \"address.country.keyword\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es_2/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_2",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cluster Health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/_cluster/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"_cluster",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

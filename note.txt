@@ -1,0 +1,6 @@
+Source: https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+
+Ubuntu issue:
+- https://github.com/elastic/elasticsearch/issues/25067
+- https://stackoverflow.com/questions/42889241/how-to-increase-vm-max-map-count
+- https://www.elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
