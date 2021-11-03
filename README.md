@@ -7,11 +7,15 @@
 4. Import postman collection to postman
 
 ---
+---
+---
 
 ## Info
 - Minimum (N/2)+1 nodes to start the cluster.
 - If we have 3 nodes, at least 2 nodes must run on startup
 
+---
+---
 ---
 
 ## API
@@ -22,6 +26,8 @@ http://localhost:9201
 ```
 ![Image](/images/escluster-default_port.png)
 
+---
+---
 
 ### Get Cluster's Node Info
 ```
@@ -29,11 +35,17 @@ GET http://localhost:9201/_cat/nodes?v
 ```
 ![Image](/images/escluster-get_node_info.png)
 
+---
+---
+
 ### Create Index
 ```
 PUT http://localhost:9202/learn_es_index
 ```
 ![Image](/images/escluster-create_index.png)
+
+---
+---
 
 ### Get Detailed Index
 - Index information will exist across nodes in the cluster
@@ -42,11 +54,17 @@ GET http://localhost:9203/learn_es_index
 ```
 ![Image](/images/escluster-get_detail_index.png)
 
+---
+---
+
 ### Get Indices Info in Cluster
 ```
 http://localhost:9203/_cat/indices?v
 ```
 ![Image](/images/escluster-get_indices_info_in_cluster.png)
+
+---
+---
 
 ### Get Shards Info in Cluster (Document Distribution)
 ```
@@ -54,6 +72,9 @@ http://localhost:9203/_cat/shards?v
 ```
 ![Image](/images/escluster-shards_info_in_cluster.png)
 
+---
+---
+---
 
 ## Performing CRUD operations
 ### Create Document - PUT
@@ -84,6 +105,8 @@ PUT http://localhost:9203/learn_es_index/_doc/3
 ```
 ![Image](/images/escluster-create_doc_put_3.png)
 
+---
+---
 
 ### Create Document - POST (auto increment)
 ```
@@ -94,6 +117,9 @@ POST http://localhost:9203/learn_es_index/_doc
 }
 ```
 ![Image](/images/escluster-create_doc_post.png)
+
+---
+---
 
 ### Read Document
 ```
@@ -106,6 +132,8 @@ GET http://localhost:9203/learn_es_index/_doc/dummy_id
 ```
 ![Image](/images/escluster-get_doc_not_found.png)
 
+---
+---
 
 ### Update Document
 ```
@@ -117,12 +145,17 @@ PUT http://localhost:9203/learn_es_index/_doc/1
 ```
 ![Image](/images/escluster-update_doc.png)
 
+---
+---
+
 ### Delete Document
 ```
 DELETE http://localhost:9203/learn_es_index/_doc/KVdu43wBXN6h2Uu3uG1t
 ```
 ![Image](/images/escluster-delete_doc.png)
 
+---
+---
 ---
 
 ## Performing Search operations
@@ -132,11 +165,17 @@ GET http://localhost:9203/_search
 ```
 ![Image](/images/escluster-search_all_index.png)
 
+---
+---
+
 ### Search Specific Index
 ```
 GET http://localhost:9203/learn_es_index/_search
 ```
 ![Image](/images/escluster-search_specific_index.png)
+
+---
+---
 
 ### Search Query Match
 ```
@@ -150,6 +189,9 @@ GET http://localhost:9203/learn_es_index/_search
 }
 ```
 ![Image](/images/escluster-search_query_match.png)
+
+---
+---
 
 ### Search Bool Query (must)
 ```
@@ -167,6 +209,9 @@ GET http://localhost:9203/learn_es_index/_search
 }
 ```
 ![Image](/images/escluster-search_bool_query.png)
+
+---
+---
 
 ### Search Bool Query (should)
 ```
@@ -193,6 +238,9 @@ GET http://localhost:9203/learn_es_index/_search
 }
 ```
 ![Image](/images/escluster-search_bool_must.png)
+
+---
+---
 
 ### Search Aggregation
 ```
