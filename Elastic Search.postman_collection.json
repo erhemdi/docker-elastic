@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Default Port",
+			"name": "Get Node Info - Default Port",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -22,7 +22,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Node Info",
+			"name": "Get Cluster's Node Info",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -62,14 +62,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9202/learn_es_2",
+					"raw": "http://localhost:9202/learn_es_index",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9202",
 					"path": [
-						"learn_es_2"
+						"learn_es_index"
 					]
 				}
 			},
@@ -81,41 +81,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9203/learn_es",
+					"raw": "http://localhost:9203/learn_es_index",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es"
+						"learn_es_index"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get List Cat Command",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:9203/_cat/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "9203",
-					"path": [
-						"_cat",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Cat Indices",
+			"name": "Get Indices Info in Cluster",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -141,7 +121,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Cat Shards",
+			"name": "Get Shards Info in Cluster",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -167,13 +147,13 @@
 			"response": []
 		},
 		{
-			"name": "Add Document",
+			"name": "Create Document - PUT",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"first_name\": \"Iris\",\n    \"last_name\": \"West\",\n    \"address\": {\n        \"city\": \"Jakarta\",\n        \"country\": \"Indonesia\"\n    },\n    \"hobby\": [\"gather information\"]\n}",
+					"raw": "{\n    \"programming_language\": \"kotlin\",\n    \"typing_type\": \"static\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -181,16 +161,46 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9203/learn_es_2/_doc/2",
+					"raw": "http://localhost:9203/learn_es_index/_doc/3",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es_2",
+						"learn_es_index",
 						"_doc",
-						"2"
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Document - POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"programming_language\": \"python\",\n    \"typing_type\": \"dynamic\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9203/learn_es_index/_doc/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"learn_es_index",
+						"_doc",
+						"4"
 					]
 				}
 			},
@@ -202,16 +212,16 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9203/learn_es/_doc/1",
+					"raw": "http://localhost:9203/learn_es_index/_doc/KVdu43wBXN6h2Uu3uG1t",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es",
+						"learn_es_index",
 						"_doc",
-						"1"
+						"KVdu43wBXN6h2Uu3uG1t"
 					]
 				}
 			},
@@ -224,7 +234,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"first_name\": \"Nora Barry\",\n    \"last_name\": \"Allen\",\n    \"address\": {\n        \"city\": \"DKI Jakarta\",\n        \"country\": \"Indonesia\"\n    },\n    \"hobby\": [\"watching\", \"sleeping\"]\n}",
+					"raw": "{\n    \"programming_language\": \"javascript\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -232,16 +242,16 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9203/learn_es/_doc/1",
+					"raw": "http://localhost:9203/learn_es_index/_doc/KVdu43wBXN6h2Uu3uG1t",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es",
+						"learn_es_index",
 						"_doc",
-						"1"
+						"KVdu43wBXN6h2Uu3uG1t"
 					]
 				}
 			},
@@ -253,16 +263,16 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9203/learn_es/_doc/1",
+					"raw": "http://localhost:9203/learn_es_index/_doc/KVdu43wBXN6h2Uu3uG1t",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es",
+						"learn_es_index",
 						"_doc",
-						"1"
+						"KVdu43wBXN6h2Uu3uG1t"
 					]
 				}
 			},
@@ -299,7 +309,7 @@
 			"response": []
 		},
 		{
-			"name": "Search",
+			"name": "Search All Index",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -318,19 +328,19 @@
 			"response": []
 		},
 		{
-			"name": "Search Specific Indexx",
+			"name": "Search Specific Index",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9203/learn_es_2/_search",
+					"raw": "http://localhost:9203/learn_es_index/_search",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es_2",
+						"learn_es_index",
 						"_search"
 					]
 				}
@@ -347,7 +357,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": {\n        \"match\": {\n            // \"last_name\": \"allen\"\n            // \"address.city\": \"jakarta\"\n            \"hobby\": \"watching\"\n        }\n    }\n}",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"typing_type\": \"dynamic\"\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -355,14 +365,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9203/learn_es_2/_search",
+					"raw": "http://localhost:9203/learn_es_index/_search",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es_2",
+						"learn_es_index",
 						"_search"
 					]
 				}
@@ -379,7 +389,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": {\n        \"bool\": {\n            // \"must_not\": {\n            //     \"match\": {\n            //         \"first_name\": \"barry\"\n            //     }\n            // }\n            \"must\": {\n                \"match\": {\n                    \"first_name\": \"iris\"\n                }\n            }\n        }\n    }\n}",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": {\n                \"match\": {\n                    \"typing_type\": \"static\"\n                }\n            }\n            // \"must\": [\n            //     {\n            //         \"match\": {\n            //             \"programming_language\": \"swift\"\n            //         }\n            //     },\n            //     {\n            //         \"match\": {\n            //             \"typing_type\": \"static\"\n            //         }\n            //     }\n            // ]\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -387,14 +397,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9203/learn_es_2/_search",
+					"raw": "http://localhost:9203/learn_es_index/_search",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es_2",
+						"learn_es_index",
 						"_search"
 					]
 				}
@@ -411,7 +421,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": [],\n            \"must_not\": [],\n            \"should\": [\n                {\n                    \"match\": {\n                        \"first_name\": \"iris\"\n                    }\n                },\n                {\n                    \"match\": {\n                        \"last_name\": \"allen\"\n                    }\n                }\n            ]\n        }\n    }\n}",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": [],\n            \"must_not\": [],\n            \"should\": [\n                {\n                    \"match\": {\n                        \"programming_language\": \"golang\"\n                    }\n                },\n                {\n                    \"match\": {\n                        \"programming_language\": \"kotlin\"\n                    }\n                }\n            ]\n        }\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -419,14 +429,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9203/learn_es_2/_search",
+					"raw": "http://localhost:9203/learn_es_index/_search",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es_2",
+						"learn_es_index",
 						"_search"
 					]
 				}
@@ -440,7 +450,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": []\n        }\n    },\n    \"aggs\": {\n        \"hobbies\": {\n            \"terms\": {\n                \"field\": \"hobby.keyword\"\n            }\n        },\n        \"countries\": {\n            \"terms\": {\n                \"field\": \"address.country.keyword\"\n            }\n        }\n    }\n}",
+					"raw": "{\n    \"query\": {\n        \"bool\": {\n            \"must\": []\n        }\n    },\n    \"aggs\": {\n        \"result_typing_type\": {\n            \"terms\": {\n                \"field\": \"typing_type.keyword\"\n            }\n        },\n        \"result_programming_lang\": {\n            \"terms\": {\n                \"field\": \"programming_language.keyword\"\n            }\n        }\n    }\n}\n\n\n// {\n//     \"query\": {\n//         \"bool\": {\n//             \"must\": []\n//         }\n//     },\n//     \"aggs\": {\n//         \"hobbies\": {\n//             \"terms\": {\n//                 \"field\": \"hobby.keyword\"\n//             }\n//         },\n//         \"countries\": {\n//             \"terms\": {\n//                 \"field\": \"address.country.keyword\"\n//             }\n//         }\n//     }\n// }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -448,15 +458,35 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9203/learn_es_2/_search",
+					"raw": "http://localhost:9203/learn_es_index/_search",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "9203",
 					"path": [
-						"learn_es_2",
+						"learn_es_index",
 						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get List Cat Command",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9203/_cat/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9203",
+					"path": [
+						"_cat",
+						""
 					]
 				}
 			},
